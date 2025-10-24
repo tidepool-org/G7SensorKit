@@ -20,6 +20,12 @@ public protocol G7StateObserver: AnyObject {
 }
 
 public class G7CGMManager: CGMManager {
+    public var inSignalLoss: Bool = false
+    
+    public var isInoperable: Bool {
+        cgmManagerStatus.isInoperable
+    }
+    
     private let log = OSLog(category: "G7CGMManager")
 
     public var state: G7CGMManagerState {
